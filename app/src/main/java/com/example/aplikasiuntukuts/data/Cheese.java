@@ -49,13 +49,13 @@ public class Cheese {
     private String name;
 
 
-    public Cheese(long id, String name){
+    public Cheese(String name){
         this.name = name;
-        this.id = id;
     }
 
     public String getName() { return  this.name; }
     public long getId() {return  this.id;}
+    public void setName(String name){this.name = name;}
 
     /**
      * Create a new {@link Cheese} from the specified {@link ContentValues}.
@@ -65,7 +65,7 @@ public class Cheese {
      */
     @NonNull
     public static Cheese fromContentValues(@Nullable ContentValues values) {
-        final Cheese cheese = new Cheese(0,"data");
+        final Cheese cheese = new Cheese("data");
         if (values != null && values.containsKey(COLUMN_ID)) {
             cheese.id = values.getAsLong(COLUMN_ID);
         }
