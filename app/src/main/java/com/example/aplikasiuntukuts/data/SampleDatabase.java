@@ -97,7 +97,7 @@ public abstract class SampleDatabase extends RoomDatabase {
                 CheeseDao dao = sInstance.cheeseDao();
                 dao.deleteAll();
                 for (int i = 0; i < Cheese.CHEESES.length; i++) {
-                    Cheese data = new Cheese(i,Cheese.CHEESES[i]);
+                    Cheese data = new Cheese(Cheese.CHEESES[i]);
                     dao.insert(data);
                 }
             });
