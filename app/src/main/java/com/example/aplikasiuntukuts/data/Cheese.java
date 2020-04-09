@@ -49,8 +49,15 @@ public class Cheese {
     private String name;
 
 
-    public Cheese(String name){
+    public Cheese(long id, String name){
+        this.id = id;
         this.name = name;
+    }
+    public Cheese(String name){
+        this(0,name);
+    }
+    public Cheese(){
+        this(0,"");
     }
 
     public String getName() { return  this.name; }
